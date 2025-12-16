@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentino Rugnia - Maquetado y Desarrollo Web - 2025 - Hitman: Blood Money</title>
+  <meta name="description" content="Sitio web dedicado a Hitman: Blood Money (2006) - Historia, curiosidades y multimedia del legendario juego de IO Interactive">
+  <meta name="author" content="Valentino - Diseño Multimedial">
+  <meta name="keywords" content="Hitman, Blood Money, Agente 47, IO Interactive, videojuegos, 2006">
+
+  <meta property="og:title" content="Hitman: Blood Money - Historia y Curiosidades">
+  <meta property="og:description" content="Explora la historia y curiosidades del icónico Hitman: Blood Money (2006)">
+  <meta property="og:type" content="website">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Web App Manifest (PWA) dinámico -->
+  <script type="application/manifest+json" id="manifest">
+    {
+      "name": "Hitman: Blood Money - Historia y Curiosidades",
+      "short_name": "Hitman: BM",
+      "description": "Sitio web dedicado a Hitman: Blood Money (2006) - Historia, curiosidades y multimedia del legendario juego de IO Interactive",
+      "start_url": "./index.html",
+      "scope": "./",
+      "lang": "es-AR",
+      "display": "standalone",
+      "background_color": "#121212",
+      "theme_color": "#b91c1c",
+      "icons": [
+        {
+          "src": "img/logo.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any maskable"
+        },
+        {
+          "src": "img/logo.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any maskable"
+        }
+      ]
+    }
+  </script>
+
+  <!-- iOS PWA Support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Hitman: BM">
+  <link rel="apple-touch-icon" href="img/logo.png">
+
+  <!-- Script para crear el manifest dinámicamente -->
+  <script>
+    // Crear el manifest dinámicamente al cargar la página
+    window.addEventListener('DOMContentLoaded', function() {
+      try {
+        // Obtener el contenido del manifest desde el script
+        const manifestContent = document.getElementById('manifest').textContent;
+        // Crear un Blob con el contenido del manifest
+        const manifestBlob = new Blob([manifestContent], {type: 'application/manifest+json'});
+        // Crear una URL para el Blob
+        const manifestURL = URL.createObjectURL(manifestBlob);
+        // Crear el elemento link
+        const linkElement = document.createElement('link');
+        linkElement.rel = 'manifest';
+        linkElement.href = manifestURL;
+        // Agregar el elemento link al head
+        document.head.appendChild(linkElement);
+      } catch (error) {
+        console.error('Error al generar el manifest dinámicamente:', error);
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#inicio">
+        <img src="img/logo.png" alt="Hitman Blood Money Logo" class="navbar-logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">INICIO</a></li>
+          <li class="nav-item"><a class="nav-link" href="#historia">HISTORIA</a></li>
+          <li class="nav-item"><a class="nav-link" href="#curiosidades">CURIOSIDADES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trailer">TRAILER</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">CONTACTO</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carousel / Hero Section -->
+  <section id="inicio">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/carousel-1.jpg" class="d-block w-100" alt="Hitman Blood Money">
+          <div class="carousel-overlay"></div>
+          <div class="carousel-caption">
+            <h1 class="display-2 fw-bold">Money Talks. Silence Pays.</h1>
+            <div class="red-divider mx-auto"></div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/carousel-2.jpg" class="d-block w-100" alt="Hitman Blood Money">
+          <div class="carousel-overlay"></div>
+          <div class="carousel-caption">
+            <h1 class="display-2 fw-bold">The World of Assassination Begins Here.</h1>
+            <div class="red-divider mx-auto"></div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/carousel-3.jpg" class="d-block w-100" alt="Hitman Blood Money">
+          <div class="carousel-overlay"></div>
+          <div class="carousel-caption">
+            <h1 class="display-2 fw-bold">Hitman: Blood Money (2006)</h1>
+            <div class="red-divider mx-auto"></div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Historia -->
+  <section id="historia" class="py-5 bg-darker">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title text-center mb-4">Historia del Juego</h2>
+          <div class="red-divider mx-auto mb-5"></div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+          <div class="content-text">
+            <p class="lead">
+              <span class="drop-cap">H</span>itman: Blood Money fue lanzado en mayo de 2006 por IO Interactive y publicado por Eidos Interactive. Este título representó un hito crucial en la evolución de la saga Hitman, estableciendo nuevos estándares para los juegos de sigilo y acción táctica. El juego fue desarrollado para múltiples plataformas incluyendo PC, PlayStation 2, Xbox y Xbox 360, alcanzando una audiencia masiva de jugadores en todo el mundo.
+            </p>
+
+            <p>
+              La narrativa de Blood Money se sitúa en un contexto oscuro y político, donde el Agente 47 se encuentra en medio de una guerra encubierta entre dos organizaciones de asesinos. La Agencia Internacional de Contratos (ICA), para la cual trabaja el protagonista, está siendo sistemáticamente destruida por una organización rival conocida como "The Franchise". A medida que avanza la historia, 47 debe eliminar objetivos cada vez más peligrosos mientras descubre una conspiración que amenaza no solo a la ICA, sino su propia existencia.
+            </p>
+
+            <div class="my-5">
+              <img src="img/history-1.jpg" alt="Escena del juego Hitman Blood Money" class="img-fluid rounded shadow-red">
+            </div>
+
+            <p>
+              Blood Money introdujo innovaciones revolucionarias en el gameplay que definirían el futuro de la franquicia. El sistema de disfraces fue completamente rediseñado, permitiendo al jugador mezclarse con diferentes grupos sociales y acceder a áreas restringidas de manera más orgánica. La libertad de ejecución alcanzó nuevas alturas: cada misión ofrecía múltiples formas de eliminar al objetivo, desde accidentes aparentemente naturales hasta asesinatos directos y brutales. El jugador podía hacer que las muertes parecieran accidentes, envenenar comidas, provocar "accidentes" con objetos del entorno, o simplemente usar la fuerza bruta.
+            </p>
+
+            <p>
+              Uno de los aspectos más innovadores fue el sistema económico basado en dinero de sangre. Por primera vez en la serie, los jugadores ganaban dinero por completar contratos, y ese dinero podía ser invertido en mejoras de equipamiento entre misiones. Podías personalizar tus armas favoritas con silenciadores, miras telescópicas, o munición especial. Esta mecánica añadió una capa estratégica adicional: matar civiles inocentes o actuar de forma descuidada resultaba en deducciones de tu paga, incentivando el juego sigiloso y preciso.
+            </p>
+
+            <div class="my-5">
+              <img src="img/history-2.jpg" alt="Sistema de planificación de misiones" class="img-fluid rounded shadow-red">
+            </div>
+
+            <p>
+              Técnicamente, Blood Money utilizaba una versión mejorada del motor Glacier, que permitió gráficos significativamente superiores a sus predecesores. Los entornos eran más detallados y vivos, con una gran cantidad de NPCs que seguían rutinas complejas y realistas. La física mejorada del juego permitía interacciones más naturales con el entorno: podías empujar personas desde balcones, causar explosiones que parecían accidentes, o manipular objetos para crear trampas mortales. La inteligencia artificial de los enemigos también fue refinada, haciendo que detectaran comportamientos sospechosos de manera más realista.
+            </p>
+
+            <p>
+              La recepción crítica de Hitman: Blood Money fue abrumadoramente positiva. Los críticos elogiaron la profundidad de sus mecánicas de juego, la libertad ofrecida al jugador, y el perfecto balance entre sigilo y acción. El juego obtuvo calificaciones sobresalientes en publicaciones especializadas y se convirtió rápidamente en uno de los títulos más vendidos de 2006. Su banda sonora, compuesta por Jesper Kyd, fue particularmente aclamada por crear una atmósfera inquietante y memorable que complementaba perfectamente la jugabilidad.
+            </p>
+
+            <p>
+              El legado de Blood Money es innegable. Muchos consideran que este juego representa la cúspide de la saga clásica de Hitman, estableciendo el estándar contra el cual se miden todos los títulos posteriores. Sus innovaciones influyeron directamente en Hitman: Absolution (2012) y en la aclamada trilogía World of Assassination (2016-2021). Conceptos como el sistema de dinero, los asesinatos que parecen accidentes, y la extrema libertad creativa para eliminar objetivos se convirtieron en pilares fundamentales de la identidad de la franquicia. Incluso hoy, casi dos décadas después de su lanzamiento, Blood Money es frecuentemente citado por fans y desarrolladores como el punto de referencia definitivo para los juegos de asesino sigiloso.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curiosidades -->
+  <section id="curiosidades" class="py-5 bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title text-center mb-4">Curiosidades</h2>
+          <div class="red-divider mx-auto mb-5"></div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card curiosity-card h-100">
+            <img src="img/curiosity-1.jpg" class="card-img-top" alt="Inspiración Cinematográfica">
+            <div class="card-body">
+              <h5 class="card-title">Inspiración Cinematográfica</h5>
+              <p class="card-text">La primera misión 'Death of a Showman' se inspiró directamente en películas clásicas de mafia y circos, creando una atmósfera única que mezclaba el glamour con el peligro mortal.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card curiosity-card h-100">
+            <img src="img/curiosity-2.jpg" class="card-img-top" alt="El Sistema de Dinero">
+            <div class="card-body">
+              <h5 class="card-title">El Sistema de Dinero</h5>
+              <p class="card-text">Blood Money fue el primer juego de la saga en introducir un sistema económico completo, donde podías mejorar armas y equipamiento con el dinero ganado en cada contrato.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card curiosity-card h-100">
+            <img src="img/curiosity-3.jpg" class="card-img-top" alt="Cameos Ocultos">
+            <div class="card-body">
+              <h5 class="card-title">Cameos Ocultos</h5>
+              <p class="card-text">Los desarrolladores de IO Interactive escondieron varios Easter eggs en el juego, incluyendo cameos de miembros del equipo de desarrollo en diferentes misiones.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="card curiosity-card h-100">
+            <img src="img/curiosity-4.jpg" class="card-img-top" alt="El Funeral del Agente 47">
+            <div class="card-body">
+              <h5 class="card-title">El Funeral del Agente 47</h5>
+              <p class="card-text">El juego presenta un final alternativo impactante donde el Agente 47 'revive' en su propio funeral, permitiendo al jugador controlar la escena final en una iglesia llena de enemigos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trailer -->
+  <section id="trailer" class="py-5 bg-darker">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title text-center mb-4">Trailer</h2>
+          <div class="red-divider mx-auto mb-5"></div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+          <div class="ratio ratio-16x9 video-container">
+            <iframe width="1920" height="1080" src="https://www.youtube.com/embed/CLcfYLKBmrw?si=IwnHxapl7xJAMcPQ"></iframe>
+          </div>
+          <p class="text-center text-secondary mt-4 fs-5">Trailer oficial de Hitman: Blood Money (2006)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-5 bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title text-center mb-4">Contacto</h2>
+          <div class="red-divider mx-auto mb-5"></div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+          <form id="contactForm" class="contact-form" action="mailto:contacto@hitmanbloodmoney.com" method="post" enctype="text/plain">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+              </div>
+              <div class="col-md-6">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-4">
+              <label for="comentario" class="form-label">Comentario</label>
+              <textarea class="form-control" id="comentario" name="comentario" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-red w-100">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-darker border-top border-red-subtle py-5">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <!-- Información del Alumno -->
+        <div class="col-12 col-md-4">
+          <h5 class="text-red mb-3">Información del Proyecto</h5>
+          <p class="text-secondary mb-2"><span class="text-white fw-semibold">Alumno:</span> Valentino Rugnia</p>
+          <p class="text-secondary mb-2"><span class="text-white fw-semibold">Materia:</span> Maquetado y Desarrollo Web</p>
+          <p class="text-secondary mb-2"><span class="text-white fw-semibold">Carrera:</span> Diseño Multimedial</p>
+          <p class="text-secondary mb-2"><span class="text-white fw-semibold">Año:</span> 2025</p>
+          <p class="text-secondary mb-2"><span class="text-white fw-semibold">Comisión:</span> DMM2BP </p>
+          <p class="text-secondary mb-2"><span class="text-white fw-semibold">Turno:</span> Mañana </p>
+        </div>
+
+        <!-- Navegación -->
+        <div class="col-12 col-md-4">
+          <h5 class="text-red mb-3">Navegación</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#inicio" class="text-secondary text-decoration-none footer-link">Inicio</a></li>
+            <li class="mb-2"><a href="#historia" class="text-secondary text-decoration-none footer-link">Historia</a></li>
+            <li class="mb-2"><a href="#curiosidades" class="text-secondary text-decoration-none footer-link">Curiosidades</a></li>
+            <li class="mb-2"><a href="#multimedia" class="text-secondary text-decoration-none footer-link">Multimedia</a></li>
+            <li class="mb-2"><a href="#contacto" class="text-secondary text-decoration-none footer-link">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Redes Sociales -->
+        <div class="col-12 col-md-4">
+          <h5 class="text-red mb-3">Síguenos</h5>
+          <div class="d-flex gap-3">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-top border-secondary pt-4 text-center">
+        <p class="text-secondary mb-0">© 2025 Hitman: Blood Money - Proyecto Académico. Todos los derechos de las imágenes y contenido pertenecen a IO Interactive.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript -->
+  <script>
+    // Desplazamiento suave para los enlaces de la barra de navegación
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Cerrar menú del celular si está abierto
+          const navbarCollapse = document.querySelector('.navbar-collapse');
+          if (navbarCollapse.classList.contains('show')) {
+            bootstrap.Collapse.getInstance(navbarCollapse).hide();
+          }
+        }
+      });
+    });
+
+    // Efecto de desplazamiento del Navbar
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('mainNavbar');
+      if (window.scrollY > 20) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Envío de formulario
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      // Validar los campos antes del envío
+      const nombre = document.getElementById('nombre').value;
+      const apellido = document.getElementById('apellido').value;
+      const email = document.getElementById('email').value;
+      const comentario = document.getElementById('comentario').value;
+
+      if (nombre && apellido && email && comentario) {
+        // Mostrar mensaje de éxito
+        alert('¡Mensaje enviado! Gracias por contactarnos, ' + nombre + '. Te responderemos pronto.');
+        // Continuar con el envío del formulario a mailto:
+        return true;
+      } else {
+        // Prevenir el envío si hay campos faltantes
+        e.preventDefault();
+        alert('Por favor completa todos los campos');
+        return false;
+      }
+    });
+
+    // Registro del Service Worker para PWA
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        try {
+          // Extraer el código del service worker embebido y registrarlo como un blob
+          const swScript = document.querySelector('script[type="text/serviceworker"]').textContent;
+          const blob = new Blob([swScript], { type: 'application/javascript' });
+          const swUrl = URL.createObjectURL(blob);
+
+          navigator.serviceWorker.register(swUrl, { scope: './' })
+            .then(registration => {
+              console.log('Service Worker registrado con éxito:', registration.scope);
+            })
+            .catch(error => {
+              console.error('Error al registrar el Service Worker:', error);
+            });
+        } catch (error) {
+          console.error('Error al crear el Service Worker:', error);
+        }
+      });
+    }
+  </script>
+
+  <!-- Service Worker embebido para PWA -->
+  <script type="text/serviceworker">
+    const CACHE_NAME = 'hitman-blood-money-v1';
+    const ASSETS_TO_CACHE = [
+      './index.html',
+      './style.css',
+      './img/logo.png',
+      './img/carousel-1.jpg',
+      './img/carousel-2.jpg',
+      './img/carousel-3.jpg',
+      './img/history-1.jpg',
+      './img/history-2.jpg',
+      './img/curiosity-1.jpg',
+      './img/curiosity-2.jpg',
+      './img/curiosity-3.jpg',
+      './img/curiosity-4.jpg',
+      'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css',
+      'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js',
+      'https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap'
+    ];
+
+    // Instalar el Service Worker
+    self.addEventListener('install', (event) => {
+      event.waitUntil(
+        caches.open(CACHE_NAME).then((cache) => {
+          return cache.addAll(ASSETS_TO_CACHE);
+        })
+      );
+      self.skipWaiting();
+    });
+
+    // Activar el Service Worker
+    self.addEventListener('activate', (event) => {
+      event.waitUntil(
+        caches.keys().then((cacheNames) => {
+          return Promise.all(
+            cacheNames.map((cacheName) => {
+              if (cacheName !== CACHE_NAME) {
+                return caches.delete(cacheName);
+              }
+            })
+          );
+        })
+      );
+      self.clients.claim();
+    });
+
+    // Estrategia de caché: Cache first para recursos estáticos, Network first para el resto
+    self.addEventListener('fetch', (event) => {
+      // Obtener la URL de la solicitud
+      const requestUrl = new URL(event.request.url);
+
+      // Determinar si la solicitud es para recursos estáticos
+      const isStaticAsset = ASSETS_TO_CACHE.includes(requestUrl.pathname) ||
+                           requestUrl.pathname.startsWith('./img/') ||
+                           event.request.url.includes('bootstrap') ||
+                           event.request.url.includes('fonts.googleapis');
+
+      if (isStaticAsset) {
+        // Para recursos estáticos: Cache first, falling back to network
+        event.respondWith(
+          caches.match(event.request).then((cachedResponse) => {
+            return cachedResponse || fetch(event.request).then((response) => {
+              if (response && response.status === 200) {
+                const responseClone = response.clone();
+                caches.open(CACHE_NAME).then((cache) => {
+                  cache.put(event.request, responseClone);
+                });
+              }
+              return response;
+            });
+          })
+        );
+      } else {
+        // Para navegación y otros recursos: Network first, falling back to cache
+        event.respondWith(
+          fetch(event.request)
+            .then((response) => {
+              if (response && response.status === 200) {
+                const responseClone = response.clone();
+                caches.open(CACHE_NAME).then((cache) => {
+                  cache.put(event.request, responseClone);
+                });
+              }
+              return response;
+            })
+            .catch(() => {
+              return caches.match(event.request).then((cachedResponse) => {
+                // Si hay una respuesta en caché, devolverla
+                if (cachedResponse) {
+                  return cachedResponse;
+                }
+
+                // Si es una solicitud de navegación, devolver index.html
+                if (event.request.mode === 'navigate') {
+                  return caches.match('./index.html');
+                }
+
+                // Fallback a index.html para solicitudes de página
+                const acceptHeader = event.request.headers.get('accept');
+                if (acceptHeader && acceptHeader.includes('text/html')) {
+                  return caches.match('./index.html');
+                }
+
+                // Fallback para otros recursos
+                return new Response('', {
+                  status: 200,
+                  headers: { 'Content-Type': 'text/html' }
+                });
+              });
+            })
+        );
+      }
+    });
+  </script>
+</body>
+</html>
